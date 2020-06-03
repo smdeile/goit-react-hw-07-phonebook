@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styles from './ContactForm.module.css';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addContact } from '../../redux/phonebook/phonebookActions';
+import { asyncActionAdd } from '../../redux/phonebook/contactsOperations';
 import transitionRight from '../TransitionCss/TransitionRight.module.css';
 import { CSSTransition } from 'react-transition-group';
 import Notification from '../Notification/Notification';
@@ -80,13 +79,9 @@ class СontactForm extends Component {
     );
   }
 }
-// СontactForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-//   handleChange: PropTypes.func.isRequired,
-//   state: PropTypes.object.isRequired,
-// };
+
 const mapStateToProps = state => ({ contacts: state.contacts });
 const mapDispatchToProps = dispatch => ({
-  onSubmit: contact => dispatch(addContact(contact)),
+  onSubmit: contact => dispatch(asyncActionAdd(contact)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(СontactForm);

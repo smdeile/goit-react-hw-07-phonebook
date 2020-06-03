@@ -7,17 +7,14 @@ import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import TransitionRight from './TransitionCss/TransitionRight.module.css';
 import styles from './Wrapper/Wrapper.module.css';
-import * as postOperations from '../redux/phonebook/postOperations';
+import * as contactsOperations from '../redux/phonebook/contactsOperations';
 import axios from 'axios';
 
 class App extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchStart();
   }
   render() {
-    // axios.get('http://localhost:3000/contacts').then(console.log);
-
     const { contacts } = this.props;
     const lengthCont = contacts.length > 1;
     return (
@@ -43,6 +40,6 @@ const mapStateToProps = state => ({
   contacts: state.contacts,
 });
 const mapDispatchToProps = {
-  fetchStart: postOperations.asyncActionCreator,
+  fetchStart: contactsOperations.asyncActionCreator,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
