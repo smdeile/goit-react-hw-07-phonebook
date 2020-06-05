@@ -28,12 +28,9 @@ export const asyncActionDelete = id => dispatch => {
 };
 export const asyncActionAdd = newContact => dispatch => {
   dispatch(addStart());
-  console.log(newContact);
-  const id = shortid();
-  newContact.id = id;
-  console.log(id);
+
   axios
     .post(`http://localhost:3000/contacts`, newContact)
-    .then(() => dispatch(addSuccess(newContact)))
+    .then(response => dispatch(addSuccess(response.data)))
     .catch(err => dispatch(addFailure(err)));
 };
