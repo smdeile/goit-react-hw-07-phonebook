@@ -1,11 +1,6 @@
 {
   "contacts": [
     {
-      "id": "id-8",
-      "name": "Eden Clements5",
-      "number": "645-17-79"
-    },
-    {
       "name": "cat",
       "number": "123",
       "id": "O4SmuQmCj"
@@ -54,6 +49,11 @@
       "name": "love",
       "number": "123",
       "id": "J0tE75b"
+    },
+    {
+      "name": "sdfsdfsdfsdfsdf",
+      "number": "123",
+      "id": "3ZhuMQ-"
     }
   ]
 }
